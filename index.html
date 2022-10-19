@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="css/style.css">
+  <title>Palidroma e Pari e Dispari</title>
+</head>
+<body>
+   <div class="container">
+    <div class="palidroma">
+      <h1>
+        PALIDROMA
+      </h1>
+      <label for="parola-utente">Inserisci una parola</label>
+      <input id="parola-utente" type="text" placeholder="Inserisci una parola palidroma">
+    </div>
+    <div class="pari-dispari">
+      <h1>
+        PARI O DISPARI
+      </h1>
+      <label for="numero-utente">Inserisci un numero</label>
+      <input id="numero-utente" type="text" placeholder="DA 1 A 5">
+      <label for="scegli">Pari o Dispari?</label>
+      <select name="scegli" id="scegli">
+        <option value="pari">Pari</option>
+        <option value="dispari">Dispari</option>
+      </select>
+      <button>Genera</button>
+      <div id="scelta"></div>
+      <div id="numero-computer"></div>
+      <div id="somma"></div>
+      <div id="risultato"></div>
+    </div>
+   </div>
+
+
+  <script src="js/script.js"></script>
+</body>
+</html>
