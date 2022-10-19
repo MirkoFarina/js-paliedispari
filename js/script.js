@@ -1,25 +1,11 @@
-/*Esercizio di oggi:
-nome repo: **js-paliedispari**
-**Palidroma**
-Chiedere all’utente di inserire una parola
-Creare una funzione per capire se la parola inserita è palindroma
-**Pari e Dispari**
-L’utente sceglie pari o dispari e inserisce un numero da 1 a 5.
-Generiamo un numero random (sempre da 1 a 5) per il computer (usando una funzione).
-Sommiamo i due numeri
-Stabiliamo se la somma dei due numeri è pari o dispari (usando una funzione)
-Dichiariamo chi ha vinto.
-**Consigli del giorno**
-1. Scriviamo sempre in italiano i passaggi che vogliamo fare
-2. Scriviamo sempre solo un pezzetto di codice alla volta, se funziona allora andiamo avanti. */ 
+const buttonPalindroma = document.querySelector('button');
 
+buttonPalindroma.addEventListener('click', function(){
+  const parolaUtente = document.getElementById('parola-utente').value;
+  const outputParola = document.getElementById('output-parola');
+  checkParola(parolaUtente, outputParola);
 
-
-
-
-
-
-
+})
 
 
 /* PARI E DISPARI */
@@ -28,16 +14,16 @@ const genera = document.querySelector('.pari-dispari button');
 
 genera.addEventListener('click', function(){
   const sceltaUtente = document.getElementById('scegli').value;
-  const numeroUtente = parseInt(document.getElementById('numero-utente').value);
-  console.log(numeroUtente);
+  const numeroUtente = document.getElementById('numero-utente');
+  const valoreNumeroUtente = parseInt(numeroUtente.value);
   const numeroComputer = numeroRandom(5, 1);
-  const somma = numeroUtente + numeroComputer;
+  const somma = valoreNumeroUtente + numeroComputer;
   const risultato = pariDispari(somma);
   const outputSceltaUtente = document.getElementById('scelta');
   const outputNumeroComputer = document.getElementById('numero-computer');
   const outputSomma = document.getElementById('somma');
   const outputRisultato = document.getElementById('risultato');
-  let isCheck = checkNumero(numeroUtente);
+  let isCheck = checkNumero(valoreNumeroUtente);
 
 
   if (isCheck){
@@ -50,6 +36,7 @@ genera.addEventListener('click', function(){
     alert('Inserisci il numero corretto!!!!!')
   }
 
+  numeroUtente.value = '';
 })
 
 
@@ -62,6 +49,32 @@ genera.addEventListener('click', function(){
 
 
 // FUNZIONI
+
+// PALINDROMA
+function checkParola(parola, output){
+  const parolaInserita = [];
+  const parolaInvertita = [];
+  let stringaParolaInserita;
+  let stringaParolaInvertita;
+
+  for(let i = 0; i < parola.length; i++){
+    parolaInserita.push(parola[i])
+  }
+
+  stringaParolaInserita = parolaInserita.toString();  
+  parolaInvertita.push(parolaInserita.reverse())
+  stringaParolaInvertita = parolaInvertita.toString()
+
+
+  if(stringaParolaInserita === stringaParolaInvertita){
+    output.innerText = 'La parola inserita è Palindroma'
+  }else {
+    output.innerText = 'La parola inserita non è Palindroma'
+  }
+}
+
+
+// PARI E DISPARI
 function numeroRandom(max, min) {
   const numeroGenerato = Math.floor(Math.random() * (max - min + 1)) + min;
 
