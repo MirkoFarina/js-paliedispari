@@ -35,7 +35,7 @@ genera.addEventListener('click', function(){
     outputRisultato.innerText = `Vince ${risultato}`;
 
   }else {
-    alert('Inserisci il numero corretto!!!!!')
+    alert('Inserisci il numero corretto!!!!!');
   }
 
   numeroUtente.value = '';
@@ -64,14 +64,14 @@ function checkParola(parola, output){
   }
 
   stringaParolaInserita = parolaInserita.toString();  
-  parolaInvertita.push(parolaInserita.reverse())
-  stringaParolaInvertita = parolaInvertita.toString()
+  parolaInvertita.push(parolaInserita.reverse());
+  stringaParolaInvertita = parolaInvertita.toString();
 
 
   if(stringaParolaInserita === stringaParolaInvertita){
-    output.innerText = 'La parola inserita è Palindroma'
+    output.innerText = 'La parola inserita è Palindroma';
   }else {
-    output.innerText = 'La parola inserita non è Palindroma'
+    output.innerText = 'La parola inserita non è Palindroma';
   }
 }
 
