@@ -1,10 +1,12 @@
 const buttonPalindroma = document.querySelector('button');
 
 buttonPalindroma.addEventListener('click', function(){
-  const parolaUtente = document.getElementById('parola-utente').value;
+  const parolaUtente = document.getElementById('parola-utente');
   const outputParola = document.getElementById('output-parola');
-  checkParola(parolaUtente, outputParola);
 
+  checkParola(parolaUtente.value, outputParola);
+
+  parolaUtente.value = "";
 })
 
 
